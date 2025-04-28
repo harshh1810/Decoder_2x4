@@ -1,0 +1,20 @@
+module decode_2x4_tb();
+  reg [0:1] i;
+  wire [0:3] y;
+  
+  decode_2x4 uut (y,i);
+  
+  initial
+    begin
+      i=2'b00;  
+     #5; i=2'b01;
+     #5; i=2'b10;
+     #5; i=2'b11;
+    end
+  
+  initial
+    begin 
+      $dumpfile("dump.vcd");
+      $dumpvars(1);
+    end
+endmodule
